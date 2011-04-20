@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.core import serializers
+from django.utils.datastructure import MultiValueDictKeyError
 from taggit.models import Tag
 
 def list_tags(request):
@@ -7,5 +8,5 @@ def list_tags(request):
 		tags = Tag.objects.filter(name__istartswith=request.GET['q']).values_list('name', flat=True)
 	except MultiValueDictKeyError:
 		pass
-	
+
 	return HttpResponse('\n'.join(tags), mimetype='text/plain')
