@@ -14,7 +14,7 @@ class TagAutocomplete(forms.TextInput):
 		if value is not None and not isinstance(value, basestring):
 			value = edit_string_for_tags([o.tag for o in value.select_related("tag")])
 		html = super(TagAutocomplete, self).render(name, value, attrs)
-		js = u'<script type="text/javascript">$(function() { $("#%s_tags").autocomplete("%s", { multiple: true }); });</script>' % (attrs['id'], list_view)
+		js = u'<script type="text/javascript">$(function() { $("#%s_tag").autocomplete("%s", { multiple: true }); });</script>' % (attrs['id'], list_view)
 		return mark_safe("\n".join([html, js]))
 
 	class Media:
