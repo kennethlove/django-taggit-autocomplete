@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 from setuptools import setup, find_packages
- 
+
 long_description = open('README.txt').read()
- 
+
 setup(
     name='django-taggit-autocomplete',
-    version='0.1',
+    version='0.1.1',
     description='Autocompletion for django-taggit',
     long_description=long_description,
     author='Jeremy Epstein',
@@ -22,4 +22,4 @@ setup(
         'Framework :: Django',
     ],
     zip_safe=False,
-) 
+)
